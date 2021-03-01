@@ -37,9 +37,12 @@ exports.chartWidget = (req, res) => {
 }
 
 exports.processLoan = async (email) => {
+// random status generated
+// you could add logic here to get credit scores from experian transunion and equifax
+// then approve or deny based on the score  
 
 const status = Math.random() >= 0.5 ? 'approved' : 'denied';
-  console.log('loan status: ' + status);
+ 
   await MongoClient.connect(dbUrl, async (error, database) => {
     const db = database.db(process.env.DB)
     const collection = db.collection('loans');

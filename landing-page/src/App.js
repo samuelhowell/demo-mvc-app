@@ -68,9 +68,7 @@ class App extends Component {
       })
         .then(res => res.json())
         .then(res => {
-          console.log(res);
           if (res.success) {
-            console.log(res.status);
             localStorage.setItem('status', res.status);
             this.setState({ status: res.status });
           }
@@ -90,12 +88,6 @@ class App extends Component {
     localStorage.setItem('submitted', true);
 
     event.preventDefault();
-    console.log({
-      "name": this.state.name,
-      "email": this.state.email,
-      "ssn": this.state.ssn,
-      "amount": this.state.amount
-    });
 
     try {
       const response = await fetch('/apply/', {

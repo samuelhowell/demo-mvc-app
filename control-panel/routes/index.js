@@ -3,7 +3,6 @@ const router = express.Router();
 const passport = require('passport');
 const {isLoggedIn} = require('../middleware/authModule');
 
-
 router.get('/', isLoggedIn, (req, res) => {
     res.render('pages/home', { user: req.user});
   });
@@ -16,7 +15,7 @@ router.get('/login', (req, res) => {
     res.render('pages/login');
   });
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login' }), async (req, res) => {
+router.post('/login', passport.authenticate('local', {failureRedirect: '/login' }), (req, res) => {
   res.redirect('/');
   });
 

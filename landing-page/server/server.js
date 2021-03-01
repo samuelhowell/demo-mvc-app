@@ -27,14 +27,13 @@ fetch('https://democp.samhowell.dev/api/loans/', {
     })
     .then(res => res.json())
     .then(json => {
-      // console.log(json);
       res.send(json);
     });
 
 });
 
 app.get('/status/:id', (req, res) => {
-// console.log('server loan id ' + req.body.loanid);
+  
 fetch(`https://democp.samhowell.dev/api/loans/${req.params.id}`, {
         method: 'GET',
         headers: {
@@ -44,7 +43,6 @@ fetch(`https://democp.samhowell.dev/api/loans/${req.params.id}`, {
     })
     .then(res => res.json())
     .then(json => {
-      // console.log(json);
       res.send(json);
     });
 

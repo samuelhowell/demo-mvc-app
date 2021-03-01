@@ -14,7 +14,6 @@ MongoClient.connect(dbUrl, (error, database) => {
   });
 });
 
-
 exports.findById = function(id, cb) {
   process.nextTick(function() {
 
@@ -31,9 +30,8 @@ exports.findById = function(id, cb) {
   });
 }
 
-
-exports.findByUsername = function(username, cb) {
-  username = username.toLowerCase().trim();
+exports.findByUsername = function(user, cb) {
+  const username = user.toLowerCase().trim();
   process.nextTick(function() {
     for (let i = 0, len = records.length; i < len; i++) {
       const record = records[i];
@@ -41,6 +39,6 @@ exports.findByUsername = function(username, cb) {
         return cb(null, record);
       }
     }
-    return cb(null, null);
+    return cb(null, false);
   });
 }

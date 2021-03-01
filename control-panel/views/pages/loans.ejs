@@ -1,69 +1,70 @@
 <%- include('../partials/head'); %>
 
 <body id="page-top">
-    <div id="wrapper">
+  <div id="wrapper">
 
-        <%- include('../partials/sidebar'); %>
+    <%- include('../partials/sidebar'); %>
 
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
 
-                <%- include('../partials/nav'); %>
+        <%- include('../partials/nav'); %>
 
-                    <div class="container-fluid">
+        <div class="container-fluid">
 
-                        <h1 class="h3 mb-2 text-gray-800">Loans</h1>
-                        <% if (alert) { %>
-                        <p class="mb-4 p-2 alert-success"> <%= alert %> </p>
-                         <% } %>
-                        <p class="mb-4 p-2 alert-info"><i class="fa fa-lock"></i> SSN are  <strong>salted</strong> and stored in  <strong>SHA256 hashes</strong> for security. No SSN are stored in plain text. </p>
+          <h1 class="h3 mb-2 text-gray-800">Loans</h1>
+          <% if (alert) { %>
+          <p class="mb-4 p-2 alert-success"> <%= alert %> </p>
+          <% } %>
+          <p class="mb-4 p-2 alert-info"><i class="fa fa-lock"></i> SSN are <strong>salted</strong> and stored in
+            <strong>SHA256 hashes</strong> for security. No SSN are stored in plain text. </p>
 
-
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">All Loans</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="user-table" class="table table-bordered" width="100%" cellspacing="0">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th>Loan ID</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th><i class="fa fa-lock"></i> Encrypted SSN</th>
-                                                <th>Amount</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                            <% loans.forEach(function(loan){ %>
-                                            <tr>
-                                                <td><%= loan.loanid %></td>
-                                                <td><%= loan.name %></td>
-                                                <td><%= loan.email %></td>
-                                                <td><%= loan.ssn %></td>
-                                                <td><%= loan.amount %></td>
-                                                <td><%= loan.status %></td>
-                                            </tr>
-                                            <% }); %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                    <%- include('../partials/footer'); %>
-
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">All Loans</h6>
             </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="user-table" class="table table-bordered" width="100%" cellspacing="0">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Loan ID</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th><i class="fa fa-lock"></i> Encrypted SSN</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
+                    <% loans.forEach(function(loan){ %>
+                    <tr>
+                      <td><%= loan.loanid %></td>
+                      <td><%= loan.name %></td>
+                      <td><%= loan.email %></td>
+                      <td><%= loan.ssn %></td>
+                      <td><%= loan.amount %></td>
+                      <td><%= loan.status %></td>
+                    </tr>
+                    <% }); %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <%- include('../partials/modals'); %>
-        <%- include('../partials/scripts'); %>
+      </div>
+      <%- include('../partials/footer'); %>
 
-    </body>
-    </html>
+    </div>
+
+  </div>
+
+  <%- include('../partials/modals'); %>
+  <%- include('../partials/scripts'); %>
+
+</body>
+
+</html>

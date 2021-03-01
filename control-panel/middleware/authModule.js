@@ -5,7 +5,6 @@ exports.authApi = (req, res, next) => {
   if(authHeader){
 
     const token = authHeader.split(' ')[1];
-    //res.send(token);
     if (token == null) return res.sendStatus(401);
 
     jwt.verify(token, process.env.TOKEN_SECRET, (err, user) => {
@@ -19,10 +18,6 @@ exports.authApi = (req, res, next) => {
   }
 
 }
-
-// exports.genJwt = (user) => {
-//   return jwt.sign(user, process.env.TOKEN_SECRET, { expiresIn: '28800s' });
-// }
 
 exports.isLoggedIn = (req, res, next) => {
   // passport adds this to the request object

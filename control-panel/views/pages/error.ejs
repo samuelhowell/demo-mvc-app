@@ -1,42 +1,43 @@
 <%- include('../partials/head'); %>
 
 
-  <body class="bg-gradient-primary">
+<body class="bg-gradient-primary">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="row justify-content-center">
+    <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
-                <div class="text-center mt-5">
-                    <img src="/img/logo.png">
-                </div>
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="text-center mt-5">
+          <img src="/img/logo.png">
+        </div>
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <div class="row">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <div class="row">
 
-                            <div class="col-lg-12 d-lg-block error-content">
-                              <h1><%= error.status + ' ' + message %></h1>
-                            </div>
+              <div class="col-lg-12 d-lg-block error-content">
+                <h1><%= error.status + ' ' + message %></h1>
+              </div>
 
-                            <% if (user && user.role === 'admin') { %>
-                            <div class="col-lg-12 d-lg-block error-debug">
-                            <h2><%= error.status %></h2>
-                            <pre><%= error.stack %></pre>
-                            </div>
-                            <% } %>
-
-                        </div>
-                    </div>
-                </div>
+              <% if (user && user.role === 'admin') { %>
+              <div class="col-lg-12 d-lg-block error-debug">
+                <h2><%= error.status %></h2>
+                <pre><%= error.stack %></pre>
+              </div>
+              <% } %>
 
             </div>
-
+          </div>
         </div>
+
+      </div>
 
     </div>
 
-<%- include('../partials/scripts'); %>
+  </div>
+
+  <%- include('../partials/scripts'); %>
 </body>
+
 </html>

@@ -7,7 +7,6 @@ const helmet = require('helmet');
 app.use(helmet());
 app.use(compression());
 
-
 /*
 * passport-local setup using SHA256 salting and hashing
 */
@@ -17,7 +16,7 @@ const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
 app.use(
   require('express-session')({
-    secret: 'demo',
+    secret: 'demodemo',
     resave: true,
     saveUninitialized: false,
   })
@@ -31,7 +30,7 @@ app.use(
         //hashedQueryPassword === user.password
         if (err) return cb(err);
         if (!user) return cb(null, false);
-        if (user.pass != hashedQueryPassword.toString()) return cb(null, false);
+        if (user.pass !== hashedQueryPassword.toString()) return cb(null, false);
 
         return cb(null, user);
 
