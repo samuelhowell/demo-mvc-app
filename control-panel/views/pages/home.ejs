@@ -1,0 +1,132 @@
+<%- include('../partials/head'); %>
+<body id="page-top">
+    <div id="wrapper">
+
+        <%-   include('../partials/sidebar');  %>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+
+                <%- include('../partials/nav'); %>
+
+                <div class="container-fluid">
+
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Demo App</h1>
+                        <div>
+
+                            <a href="https://github.com/samuelhowell/demo-loan-app" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fab fa-github fa-sm text-white-50"></i> View Project Source</a>
+                        </div>
+                        </div>
+
+                    <div class="row">
+
+                        <div class="col-xl-8 col-lg-7">
+                                                     <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Build Details</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p>This simple MVC demo uses express, mongo, passport, API keys, and secure sha256 passwords.</p>
+                                    <ul class="list-group">
+
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            secure API enpoint access via access/secret keys
+                                            <span class="badge badge-primary badge-pill">API</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                             <code><pre>GET /api/loans/:id</pre><pre>POST /api/loans/</pre></code>
+
+                                            <span class="badge badge-primary badge-pill">API</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            passwords are salted and stored in SHA256 hashes
+                                            <span class="badge badge-danger badge-pill">Security</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            user roles & restricted content
+                                            <span class="badge badge-danger badge-pill">Security</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            authentication with passport.js
+                                            <span class="badge badge-danger badge-pill">Security</span>
+                                        </li>
+
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <a href="https://demolp.samhowell.dev/" target="_blank"><i class="fa fa-link"></i> Loan Landing Page App uses React and Express</a>
+                                            <span class="badge badge-info badge-pill">Express/React</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            MVC node app structure
+                                            <span class="badge badge-info badge-pill">Node Dev</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            reverse proxy architecture
+                                            <span class="badge badge-success badge-pill">Server</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            nginx, node, pm2, certbot, mongo
+                                            <span class="badge badge-success badge-pill">Server</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            boostrap, font awesome, chart.js
+                                            <span class="badge badge-warning badge-pill">UI</span>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Loans </h6>
+
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color:#1cc88a"></i> Approved
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle" style="color:#e74a3b"></i> Denied
+                                        </span>
+
+                                    </div>
+                                    <hr>
+                                    <div class="mt-2">
+                                        <p><a href="/loans"><i class="fa fa-link"></i> Loans Dashboard</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+            <%- include('../partials/footer'); %>
+
+        </div>
+
+    </div>
+
+    <%- include('../partials/modals'); %>
+    <%- include('../partials/scripts'); %>
+
+    <script src="js/Chart.min.js"></script>
+    <script src="js/donutChart.js"></script>
+
+</body>
+
+</html>
